@@ -41,8 +41,8 @@ static get observedAttributes() {return ['w', 'l']; }
 
 When a custom element is not defined you can use the query selector to find it using this selector `:not(:defined)`
 
-While you can defer the custom element from loading right away and use the sample below to wait for all custom elements to be loaded,
-I recommend to load them before selecting them in JavaScript.
+While you can `defer` the custom element from loading right away and use the sample below to wait for all custom elements to be loaded,
+I recommend to load them before selecting them in JavaScript without the need for the following script.
 
 ```js
 (async () => { 
