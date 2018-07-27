@@ -1,5 +1,7 @@
 # custom-element-demo
 
+Custom elements give developers the ability to extend HTML and create their own tags. Because custom elements are standards based they benefit from the Web's built-in component model. The result is more modular code that can be reused in many different contexts.
+
 ## Recommended reading
 
  - https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements
@@ -20,3 +22,20 @@
 ```js
 static get observedAttributes() {return ['w', 'l']; }
 ```
+
+## FAQ
+
+### What is a recommended default template
+
+### How would you recommended styling custom elements
+
+### How do you handle user events from the custom element
+
+### How do you recommend passing in data to a custom element
+
+### How do you recommend getting data from a custom element
+
+### Can Custom Elements use other custom elements
+
+### How can I check if a custom element is not defined
+
