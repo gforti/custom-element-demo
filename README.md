@@ -24,7 +24,11 @@ static get observedAttributes() {return ['w', 'l']; }
 ```
 > All custom elements must have a hyphenated name e.g. todo-item, todo-list etc.
 
-## FAQ
+## Wiki / FAQ
+
+To learn more visit the Wiki page
+
+https://github.com/gforti/custom-element-demo/wiki
 
 ### What is a recommended default template
 
