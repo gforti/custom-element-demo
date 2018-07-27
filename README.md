@@ -3,7 +3,7 @@
 ## Recommended reading
 
  - https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements
- - 
+ - https://developers.google.com/web/fundamentals/web-components/
 
 ## lifecycle callbacks
 
