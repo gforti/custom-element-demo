@@ -39,3 +39,23 @@ static get observedAttributes() {return ['w', 'l']; }
 
 ### How can I check if a custom element is not defined
 
+When a custom element is not defined you can use the query selector to find it using this selector `:not(:defined)`
+
+While you can defer the custom element from loading right away and use the sample below to wait for all custom elements to be loaded,
+I recommend to load them before selecting them in JavaScript.
+
+```js
+(async () => { 
+    const undefinedElements = document.querySelectorAll(':not(:defined)');
+
+    const promises = [...undefinedElements].map(
+      elem => customElements.whenDefined(elem.localName)
+    );
+
+    // Wait for all the children to be upgraded, 
+    // then remove the placeholder.
+    await Promise.all(promises);                            
+    window.dispatchEvent(new CustomEvent('customElementsDefined'))
+})()
+```
+
