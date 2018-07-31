@@ -3,9 +3,9 @@ function generateTemplate() {
     const template = document.createElement('template');
 
     template.innerHTML = `
-        <style>                
+        <style>
             :host .todo {
-                text-align: center;        
+                text-align: center;
                 box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
                 transition: 0.5s;
                 margin: 1rem;
@@ -39,19 +39,32 @@ class TodoItem extends HTMLElement {
       shadowRoot.appendChild(generateTemplate().content.cloneNode(true));
       this.div = this.shadowRoot.querySelector('.todo')
     }
-    
+
     connectedCallback() {
         this.addEventListener('click', this.completed.bind(this))
     }
-    
+
     disconnectedCallback() {
         this.removeEventListener('click', this.completed.bind(this))
     }
-    
+
+    static get observedAttributes() {
+      return ['data-completed'];
+    }
+
+    attributeChangedCallback(attr, oldValue, newValue) {
+        if ( oldValue !== newValue) {
+            this.render()
+        }
+        console.log(`${attr} was changed from ${oldValue} to ${newValue}!`)
+    }
+
     completed() {
-        console.log(this.dataset.completed, !this.dataset.completed == 'true')
         this.dataset.completed = this.dataset.completed === 'true' ? false : true
-        
+        this.dispatchEvent(new CustomEvent('item-clicked'))
+    }
+
+    render() {
         if ( this.dataset.completed === 'true' ) {
             this.div.classList.add('strike')
         } else {

@@ -14,7 +14,7 @@ export default class TodoService extends HttpFetch {
     addTodo(item) {
         if ( Array.isArray(item) ) {
             item.forEach( todo => {
-                this.todo.push(todo.title)
+                this.todo.push(todo)
             })            
         } else {
             this.todo.push(item)
@@ -28,6 +28,14 @@ export default class TodoService extends HttpFetch {
     async fetchTodos() {
         let data = await this.get('todo.json')
         this.addTodo(data)
+    }
+    
+    updateItem(obj, index) {
+        Object.entries(obj).forEach( ([key, value]) => {
+                if ( this.todo[index].hasOwnProperty(key) )
+                    this.todo[index][key] = value
+            })
+        
     }
 }
 

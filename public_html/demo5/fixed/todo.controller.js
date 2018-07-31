@@ -15,7 +15,7 @@ export default class TodoController {
 
         todoList.addEventListener('add-todo', (e)=> {
             console.log(e.detail)
-            this.todoService.addTodo(e.detail)
+            this.todoService.addTodo({"title": e.detail, "completed" : false})
             this.listdisplay()
         })
         
@@ -24,6 +24,13 @@ export default class TodoController {
    
    listdisplay() {
        const todos = this.todoService.getTodos()
-       this.todoListDisplay.innerHTML = `${todos.map(title => `<todo-item>${title}</todo-item>`).join(' ')}`
+       this.todoListDisplay.innerHTML = `${todos.map(todo => `<todo-item data-completed="${todo.completed}">${todo.title}</todo-item>`).join(' ')}`
+       
+       document.querySelectorAll('todo-item').forEach( (item, index) => {
+           item.addEventListener('item-clicked', (e) => {
+               this.todoService.updateItem({"completed": e.target.dataset.completed}, index)
+           })
+       })
+       
    }
 }
