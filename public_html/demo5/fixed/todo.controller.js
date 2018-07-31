@@ -16,7 +16,7 @@ export default class TodoController {
         todoList.addEventListener('add-todo', (e)=> {
             console.log(e.detail)
             this.todoService.addTodo({"title": e.detail, "completed" : false})
-            this.listdisplay()
+            this.addToDisplay()
         })
         
         this.listdisplay()
@@ -30,7 +30,16 @@ export default class TodoController {
            item.addEventListener('item-clicked', (e) => {
                this.todoService.updateItem({"completed": e.target.dataset.completed}, index)
            })
-       })
+       })   
+    }
+        
+   addToDisplay() {
+       const todo = this.todoService.getTodos().slice(-1).pop()
+       const index = this.todoService.getTodos().length - 1
+       this.todoListDisplay.innerHTML += `<todo-item data-completed="${todo.completed}">${todo.title}</todo-item>`
        
+       document.querySelector('todo-item:last-child').addEventListener('item-clicked', (e) => {
+            this.todoService.updateItem({"completed": e.target.dataset.completed}, index)           
+       })
    }
 }

@@ -56,7 +56,6 @@ class TodoItem extends HTMLElement {
         if ( oldValue !== newValue) {
             this.render()
         }
-        console.log(`${attr} was changed from ${oldValue} to ${newValue}!`)
     }
 
     completed() {
