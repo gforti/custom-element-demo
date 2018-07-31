@@ -1,27 +1,26 @@
-(async () => {
-    /*
-     * <score-card></score-card>
-     * <script src="score-card.element.js"></script>
-     */
-    function generateTemplate() {
+/*
+ * <score-card></score-card>
+ * <script src="score-card.element.js"></script>
+ */
+function generateTemplate() {
 
-        const template = document.createElement('template');
+    const template = document.createElement('template');
 
-        template.innerHTML = `
-            <style>
-                :host h1 {
-                  font-size: 2.5rem;
-                  color: var(--on-surface, red);
-                }
-            </style>
-            <article>
-                <h1>ScoreCard</h1>                
-            </article>
-        `;
-        return template;
-    }
+    template.innerHTML = `
+        <style>
+            :host h1 {
+              font-size: 2.5rem;
+              color: var(--on-surface, red);
+            }
+        </style>
+        <article>
+            <h1>ScoreCard</h1>                
+        </article>
+    `;
+    return template;
+}
 
-  class ScoreCard extends HTMLElement {
+class ScoreCard extends HTMLElement {
 
     constructor() {
       super();
@@ -31,17 +30,7 @@
     }
 
     connectedCallback() {
-        console.log('Custom element added to page.');
         this.render()
-    }
-    
-    disconnectedCallback() {
-      // remove event listeners
-        console.log('Custom element removed from page.');
-    }
-
-    adoptedCallback() {
-        console.log('Custom element moved to new page.');
     }
 
     static get observedAttributes() {
@@ -59,7 +48,6 @@
         this.scoredisplay.innerText = this.dataset.score
     }
 
-  }
+}
 
-  window.customElements.define('score-card', ScoreCard);
-})();
+window.customElements.define('score-card', ScoreCard)
