@@ -6,6 +6,7 @@ Custom elements give developers the ability to extend HTML and create their own 
 
  - https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements
  - https://developers.google.com/web/fundamentals/web-components/
+ - https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_templates_and_slots
 
 ## lifecycle callbacks
 
@@ -23,6 +24,24 @@ Custom elements give developers the ability to extend HTML and create their own 
 static get observedAttributes() {return ['w', 'l']; }
 ```
 > All custom elements must have a hyphenated name e.g. todo-item, todo-list etc.
+
+## Slots
+
+If you have a template like so
+```html
+<header>
+    <slot></slot>
+</header>
+<div> ...
+```
+
+You can use the custom element slot like so
+```html
+<popup-message>This is my message</popup-message>
+```
+
+The text inside of the custom element tag will be placed in the template slot tag
+
 
 ## Wiki / FAQ
 

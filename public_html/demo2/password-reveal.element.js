@@ -59,6 +59,10 @@
         this.showHide.addEventListener('click', this.tooglePassword.bind(this))
         this.render()
     }
+    
+    disconnectedCallback() {
+        this.showHide.removeEventListener('click', this.tooglePassword.bind(this))
+    }
 
     adoptedCallback() {
         console.log('Custom element moved to new page.');
@@ -75,12 +79,8 @@
         console.log(`${attr} was changed from ${oldValue} to ${newValue}!`)
     }
 
-    disconnectedCallback() {
-      // remove event listeners
-        console.log('Custom element removed from page.');
-    }
 
-      render() {
+    render() {
     }
     
     tooglePassword() {
