@@ -7,7 +7,7 @@ function generateTemplate() {
             :host .todo {
                 text-align: center;        
                 box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-                transition: 0.3s;
+                transition: 0.5s;
                 margin: 1rem;
                 padding: 1rem;
                 font-size: 1.5rem;
@@ -15,9 +15,11 @@ function generateTemplate() {
             }
             :host .todo:hover {
                 box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+                cursor: pointer;
             }
             :host .strike {
                 text-decoration: line-through !important;
+                color: silver;
             }
 
         </style>
