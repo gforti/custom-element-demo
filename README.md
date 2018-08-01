@@ -52,8 +52,14 @@ To learn more visit the Wiki page
 ## Live examples
 
 - [Demo1](https://gforti.github.io/custom-element-demo/public_html/demo1/)
+  - Very basic component using slot
 - [Demo2](https://gforti.github.io/custom-element-demo/public_html/demo2/)
+  - Password toggle.  Password input field can be accessed from custom element class
 - [Demo3](https://gforti.github.io/custom-element-demo/public_html/demo3/)
+  - Custom element when closed(click on the upper right corner) dispatches a custom event 
 - [Demo4](https://gforti.github.io/custom-element-demo/public_html/demo4/)
+  - Score card being updated by an observed attribute
 - [Demo5 - Broken](https://gforti.github.io/custom-element-demo/public_html/demo5/broken)
+  - A simple todo list that starts by fetching a list then allows you to add your own.  One custom element will take in data, the other will display it.  A controller and service manage the state. The state is broken in this example due to the state management being done in the custom element
 - [Demo5 - Fixed](https://gforti.github.io/custom-element-demo/public_html/demo5/fixed)
+  - Same as the broken demo, but fixed due to the state being managed by the service
