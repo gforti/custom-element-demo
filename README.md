@@ -4,9 +4,9 @@ Custom elements give developers the ability to extend HTML and create their own 
 
 ## Recommended reading
 
- - https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements
- - https://developers.google.com/web/fundamentals/web-components/
- - https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_templates_and_slots
+ - [MDN - Using Custom Elements](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements)
+ - [MDN - Web Components](https://developers.google.com/web/fundamentals/web-components/)
+ - [MDN - Using Templates and Slots](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_templates_and_slots)
 
 ## lifecycle callbacks
 
@@ -47,4 +47,13 @@ The text inside of the custom element tag will be placed in the template slot ta
 
 To learn more visit the Wiki page
 
-https://github.com/gforti/custom-element-demo/wiki
+- [custom-element-demo wiki](https://github.com/gforti/custom-element-demo/wiki)
+
+## Live examples
+
+- [Demo1](https://gforti.github.io/custom-element-demo/public_html/demo1/)
+- [Demo2](https://gforti.github.io/custom-element-demo/public_html/demo2/)
+- [Demo3](https://gforti.github.io/custom-element-demo/public_html/demo3/)
+- [Demo4](https://gforti.github.io/custom-element-demo/public_html/demo4/)
+- [Demo5 - Broken](https://gforti.github.io/custom-element-demo/public_html/demo5/broken)
+- [Demo5 - Fixed](https://gforti.github.io/custom-element-demo/public_html/demo5/fixed)
