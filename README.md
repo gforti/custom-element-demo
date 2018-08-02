@@ -5,7 +5,7 @@ Custom elements give developers the ability to extend HTML and create their own 
 ## Recommended reading
 
  - [MDN - Using Custom Elements](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements)
- - [MDN - Web Components](https://developers.google.com/web/fundamentals/web-components/)
+ - [Google Dev - Web Components](https://developers.google.com/web/fundamentals/web-components/)
  - [MDN - Using Templates and Slots](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_templates_and_slots)
 
 ## lifecycle callbacks
