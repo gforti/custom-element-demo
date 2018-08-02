@@ -51,6 +51,8 @@ To learn more visit the Wiki page
 
 ## Live examples
 
+> Note that all the examples are not using a pollyfill
+
 - [Demo1](https://gforti.github.io/custom-element-demo/public_html/demo1/)
   - Very basic component using slot
 - [Demo2](https://gforti.github.io/custom-element-demo/public_html/demo2/)
