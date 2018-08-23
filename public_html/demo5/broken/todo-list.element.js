@@ -41,14 +41,15 @@ class TodoList extends HTMLElement {
       shadowRoot.appendChild(generateTemplate().content.cloneNode(true));
       this.todoInput = this.shadowRoot.querySelector('input[name="todo"]');
       this.btnSubmit = this.shadowRoot.querySelector('button');
+      this.submitTodoItemBind = this.submitTodoItem.bind(this)
     }
 
     connectedCallback() {
-        this.btnSubmit.addEventListener('click', this.submitTodoItem.bind(this))
+        this.btnSubmit.addEventListener('click', this.submitTodoItemBind)
     }
     
     disconnectedCallback() {
-        this.btnSubmit.removeEventListener('click', this.submitTodoItem.bind(this))
+        this.btnSubmit.removeEventListener('click', this.submitTodoItemBind)
     }
     
     submitTodoItem() {

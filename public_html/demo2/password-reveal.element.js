@@ -52,16 +52,17 @@
       shadowRoot.appendChild(generateTemplate().content.cloneNode(true));
       this.showHide = this.shadowRoot.querySelector('.hide-show span')
       this.input = this.shadowRoot.querySelector('input')
+      this.togglePasswordBind = this.tooglePassword.bind(this)
     }
 
     connectedCallback() {
         console.log('Custom element added to page.');
-        this.showHide.addEventListener('click', this.tooglePassword.bind(this))
+        this.showHide.addEventListener('click', this.togglePasswordBind)
         this.render()
     }
     
     disconnectedCallback() {
-        this.showHide.removeEventListener('click', this.tooglePassword.bind(this))
+        this.showHide.removeEventListener('click', this.togglePasswordBind)
     }
 
     adoptedCallback() {

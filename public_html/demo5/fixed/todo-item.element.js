@@ -38,14 +38,15 @@ class TodoItem extends HTMLElement {
       const shadowRoot = this.attachShadow({ mode: 'open' });
       shadowRoot.appendChild(generateTemplate().content.cloneNode(true));
       this.div = this.shadowRoot.querySelector('.todo')
+      this.completedBind = this.completed.bind(this)
     }
 
     connectedCallback() {
-        this.addEventListener('click', this.completed.bind(this))
+        this.addEventListener('click', this.completedBind)
     }
 
     disconnectedCallback() {
-        this.removeEventListener('click', this.completed.bind(this))
+        this.removeEventListener('click', this.completedBind)
     }
 
     static get observedAttributes() {

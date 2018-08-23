@@ -96,11 +96,12 @@ class CustomMessage extends HTMLElement {
       const shadowRoot = this.attachShadow({ mode: 'open' });
       shadowRoot.appendChild(generateTemplate().content.cloneNode(true));
       this.btnDelete = this.shadowRoot.querySelector('button.delete')
+      this.btnClickBind = this.btnClick.bind(this)
     }
 
     connectedCallback() {
         console.log('Custom element added to page.');
-        this.btnDelete.addEventListener('click', this.btnClick.bind(this))
+        this.btnDelete.addEventListener('click', this.btnClickBind)
         this.render()
     }
 
@@ -122,7 +123,7 @@ class CustomMessage extends HTMLElement {
     disconnectedCallback() {
       // remove event listeners
         console.log('Custom element removed from page.');
-        this.btnDelete.removeEventListener('click', this.btnClick.bind(this))
+        this.btnDelete.removeEventListener('click', this.btnClickBind)
     }
 
     render() {
